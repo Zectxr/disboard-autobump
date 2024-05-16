@@ -14,7 +14,7 @@
 2. Extract the `discord.py-self` master.zip.
 3. Run `install.bat`.
 4. Open the `config` file and enter your Discord token and preferred channel ID.
-5. Finally, run `runner.bat`."
+5. Finally, run `runner.bat`.
 
 
 
