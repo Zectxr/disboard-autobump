@@ -1,1 +1,1 @@
-![Iceberg](https://iceberg.apache.org/assets/images/Iceberg-logo.svg)
+![Iceberg](https://github.com/Zectxr/disboard-autobump/blob/main/auto%20bump.png)
