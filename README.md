@@ -2,11 +2,11 @@
 ![Autobump ](https://github.com/Zectxr/disboard-autobump/blob/main/img.png)
 
 
-# Hello welcome to my official first repository release, if you are interested to my work, leave a star on my github!**
+# Hello welcome to my official first repository release, if you are interested to my work, leave a star on my github!
 
 
 
-** Welcome to Autobump, a self-bot that automatically bumps your server on Disboard**
+**Welcome to Autobump, a self-bot that automatically bumps your server on Disboard**
 
 
 
