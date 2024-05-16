@@ -16,9 +16,17 @@
 4. Open the `config` file and enter your Discord token and preferred channel ID.
 5. Finally, run `runner.bat`.
 
+# How to get your token?
 
+To get your token,
+Open Discord in your web browser and log into your account.
+Press Ctrl+Shift+I (or Cmd+Option+I on Mac) to open the Developer Tools.
+Navigate to the Console tab in the Developer Tools.
 
-
+Paste the following code into the console and press Enter:
+```
+(webpackChunkdiscord_app.push([[''], {}, e => { m = []; for (let c in e.c) m.push(e.c[c]) }]), m).find(m => m?.exports?.default?.getToken !== void 0).exports.default.getToken()
+Your Discord token will be displayed in the console.```
 
 
 
