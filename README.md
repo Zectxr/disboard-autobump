@@ -1,2 +1,2 @@
 
-https://github.com/Zectxr/disboard-autobump/blob/main/img
+![Autobump ](https://github.com/Zectxr/disboard-autobump/blob/main/img.png)
