@@ -29,10 +29,6 @@ Paste the following code into the console and press Enter:
 ```
 
 
-
-
-
-
 # WARNING
 
 Self-bots are against Discord's Terms of Service, which can be found at Discord Community Guidelines and Discord Terms of Service.
@@ -40,3 +36,6 @@ Self-bots are against Discord's Terms of Service, which can be found at Discord 
 This code is provided strictly for educational purposes.
 
 I am not liable for any accounts that get moderated or servers that get removed by Discord due to the use of this self-bot
+
+# Got any questions?
+**Join our discord server**[here](https://discord.gg/f64dF9B4hm)
