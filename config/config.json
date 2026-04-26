@@ -1,4 +1,6 @@
 {
-    "token": "NjY2Nzk2ODY2MDAzOTI3MDg4.GN4sOH.CiqYopQKNVdK4ZMvJ4MTnbbruEhqpOUxqnyVPI", # Change the token
-    "prefix": "!"
+    "token": "PUT YOUR TOKEN HERE",
+    "prefix": "!",
+    "channel_id": "1267037237242232832",
+    "cooldown_minutes": 150
 }

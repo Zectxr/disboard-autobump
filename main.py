@@ -1,7 +1,6 @@
 import sys
-import asyncio
-import random
 sys.path.insert(0, 'discord.py-self-master')
+import asyncio
 import discord
 from discord.ext import commands, tasks
 import json
@@ -13,11 +12,14 @@ def load_config(file_path):
 config = load_config('config/config.json')
 token = config.get('token')
 channel_id = config.get('channel_id')
-prefix = "‎"
-bot = commands.Bot(command_prefix=prefix, self_bot=True)
+if channel_id is not None:
+    channel_id = int(channel_id)
+cooldown_minutes = config.get('cooldown_minutes', 150)
 app_commands = None
 last_fetch_time = 0
-fetch_interval = 60
+fetch_interval = 5
+prefix = config.get('prefix', '!')
+bot = commands.Bot(command_prefix=prefix, self_bot=True)
 
 @tasks.loop(seconds= 5)
 async def beg_task():
@@ -34,12 +36,11 @@ async def beg_task():
                 beg_command = next((cmd for cmd in app_commands if cmd.name == "bump"), None)
                 if beg_command:
                     try:
-                        await beg_command()
-                        random_interval = random.uniform(2.5, 3.5)  # 1.5 to 2.5 hours
-                        beg_task.change_interval(hours=random_interval)
+                        await beg_command(channel)
+                        beg_task.change_interval(minutes=cooldown_minutes)
                         return
                     except Exception as inner_e:
-                        print(f"Error executing /bump command: {inner_e} hours")
+                        print(f"Error executing /bump command: {inner_e}")
                 else:
                     print("'/bump' command not found in the channel.")
     except discord.HTTPException as e:
