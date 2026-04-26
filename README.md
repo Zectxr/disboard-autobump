@@ -1,40 +1,113 @@
-![Autobump ](https://github.com/Zectxr/disboard-autobump/blob/main/img.png)
+# Disboard Autobump
 
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+[![Status](https://img.shields.io/badge/Status-Active-2EA043)](https://github.com/Zectxr/disboard-autobump)
+[![Stars](https://img.shields.io/github/stars/Zectxr/disboard-autobump?style=social)](https://github.com/Zectxr/disboard-autobump/stargazers)
 
-# Hello welcome to my official first repository release, if you are interested to my work, leave a star on my github!
+An automation project designed to trigger Disboard bump commands on a configured schedule, using a local Python runtime and a vendored discord.py-self implementation.
 
+## Overview
 
+Disboard Autobump helps streamline recurring bump actions in a selected Discord channel by:
 
-**Welcome to Autobump, a self-bot that automatically bumps your server on Disboard**
+- Reading settings from a local JSON configuration.
+- Connecting through a self-bot style Discord client implementation.
+- Finding and executing the bump application command.
+- Automatically applying cooldown-based loop intervals between bump attempts.
 
-# Set-up
+## Features
 
-1. Download and extract the repository files.
-2. Extract the `discord.py-self` master.zip.
-3. Run `install.bat`.
-4. Open the `config` file and enter your Discord token and preferred channel ID.
-5. Finally, run `runner.bat`.
+- Configurable command prefix and bump cooldown.
+- Channel-targeted bump execution.
+- Lightweight single-file runtime entrypoint.
+- Automatic command cache refresh for reliability.
+- Rate-limit handling with retry delays.
+- Simple batch scripts for install and run.
 
-# How to get your token?
+## Tech Stack
 
-To get your token,
-Open Discord in your web browser and log into your account.
-Press Ctrl+Shift+I (or Cmd+Option+I on Mac) to open the Developer Tools.
-Navigate to the Console tab in the Developer Tools.
+- Language: Python
+- Runtime: asyncio event loop
+- Discord Client: discord.py-self (vendored in this repository)
+- Configuration: JSON
+- OS Support: Windows-focused scripts
 
-Paste the following code into the console and press Enter:
-```js
-(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()
-```
+## Installation
 
+1. Clone the repository.
 
-# WARNING
+~~~powershell
+git clone https://github.com/Zectxr/disboard-autobump.git
+cd disboard-autobump
+~~~
 
-Self-bots are against Discord's Terms of Service, which can be found at Discord Community Guidelines and Discord Terms of Service.
+2. Install dependencies.
 
-This code is provided strictly for educational purposes.
+~~~powershell
+install.bat
+~~~
 
-I am not liable for any accounts that get moderated or servers that get removed by Discord due to the use of this self-bot
+3. Configure your settings in [config/config.json](config/config.json).
 
-# Got any questions?
-**Join our discord server** [here](https://discord.gg/f64dF9B4hm)
+~~~json
+{
+	"token": "PUT YOUR TOKEN HERE",
+	"prefix": "!",
+	"channel_id": "YOUR_CHANNEL_ID",
+	"cooldown_minutes": 150
+}
+~~~
+
+## Usage
+
+Run the project with either method below:
+
+~~~powershell
+run.bat
+~~~
+
+or
+
+~~~powershell
+python main.py
+~~~
+
+Expected behavior:
+
+- The client logs in using your configured token.
+- The bot searches for the bump application command in the configured channel.
+- After successful execution, the task interval updates to your configured cooldown.
+
+## Screenshots
+
+Project preview:
+
+![Disboard Autobump Preview](img.png)
+
+## Roadmap
+
+- Add structured logging with log levels and file output.
+- Add startup validation for config keys and channel access.
+- Add optional notification hooks for successful bump events.
+- Add safer secrets workflow using environment variables.
+- Add test coverage for config parsing and scheduler behavior.
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a branch for your change.
+3. Commit with clear messages.
+4. Open a pull request with a concise description and testing notes.
+
+Recommended contribution scope:
+
+- Bug fixes with reproducible steps.
+- Dependency and reliability improvements.
+- Documentation and setup quality improvements.
+
+## Disclaimer
+
+Self-bot usage may violate Discord Terms of Service and can result in account moderation actions. Use this project at your own risk and only in environments where you are authorized to test.
