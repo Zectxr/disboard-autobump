@@ -86,17 +86,12 @@ Expected flow:
 
 ## Screenshots
 
-### Logo
+<p align="center">
+  <img src="docs/img/img.png" alt="Terminal Screenshot" width="48%" />
+  <img src="docs/img/bump.png" alt="Bump Successful Screenshot" width="48%" />
+</p>
 
-![Project Logo](docs/img/logo.png)
-
-### Runtime Preview
-
-![Runtime Preview](docs/img/bump.png)
-
-### Project Cover
-
-![Project Cover](docs/img/img.png)
+<p align="center"><em>Left: Terminal view. Right: Bump successful output.</em></p>
 
 ## Roadmap
 
