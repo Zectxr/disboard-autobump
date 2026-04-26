@@ -37,6 +37,7 @@ async def beg_task():
                 if beg_command:
                     try:
                         await beg_command(channel)
+                        print("Bump has been successful.")
                         beg_task.change_interval(minutes=cooldown_minutes)
                         return
                     except Exception as inner_e:
