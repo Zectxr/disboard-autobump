@@ -1,20 +1,20 @@
-<div align="center">
-	<img src="docs/img/logo.png" alt="Disboard Autobump Logo" width="180" />
+<p align="center">
+  <img src="docs/img/logo.png" alt="Disboard Autobump Logo" width="180" />
+</p>
 
-	<h1>Disboard Autobump</h1>
+<h1 align="center">Disboard Autobump</h1>
 
-	<p>
-		A focused automation project that triggers Disboard bump commands on a schedule,
-		with configurable cooldowns and channel targeting.
-	</p>
+<p align="center">
+  A focused automation project that triggers Disboard bump commands on a schedule,
+  with configurable cooldowns and channel targeting.
+</p>
 
-	<p>
-		<a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python" /></a>
-		<a href="https://www.microsoft.com/windows"><img src="https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white" alt="Platform" /></a>
-		<a href="https://github.com/Zectxr/disboard-autobump"><img src="https://img.shields.io/badge/Status-Active-2EA043" alt="Status" /></a>
-		<a href="https://github.com/Zectxr/disboard-autobump/stargazers"><img src="https://img.shields.io/github/stars/Zectxr/disboard-autobump?style=social" alt="Stars" /></a>
-	</p>
-</div>
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white" alt="Python" /></a>
+  <a href="https://www.microsoft.com/windows"><img src="https://img.shields.io/badge/Platform-Windows-0078D6?logo=windows&logoColor=white" alt="Platform" /></a>
+  <a href="https://github.com/Zectxr/disboard-autobump"><img src="https://img.shields.io/badge/Status-Active-2EA043" alt="Status" /></a>
+  <a href="https://github.com/Zectxr/disboard-autobump/stargazers"><img src="https://img.shields.io/github/stars/Zectxr/disboard-autobump?style=social" alt="Stars" /></a>
+</p>
 
 ## Overview
 
