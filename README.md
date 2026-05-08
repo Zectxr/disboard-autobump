@@ -87,8 +87,8 @@ Expected flow:
 ## Screenshots
 
 <p align="center">
-  <img src="docs/img/img.png" alt="Terminal Screenshot" width="48%" />
-  <img src="docs/img/bump.png" alt="Bump Successful Screenshot" width="48%" />
+  <img src="docs/img/terminalofbumbsucessful.png" alt="Terminal Screenshot" width="48%" />
+  <img src="docs/img/bumpsucessfully.png" alt="Bump Successful Screenshot" width="48%" />
 </p>
 
 <p align="center"><em>Left: Terminal view. Right: Bump successful output.</em></p>
