@@ -2,5 +2,6 @@
     "token": "PUT YOUR TOKEN HERE",
     "command_prefix": "!",
     "channel_id": "1267037237242232832",
-    "cooldown": 120
+    "cooldown_min": 2,
+    "cooldown_max": 5
 }

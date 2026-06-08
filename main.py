@@ -4,6 +4,7 @@ import asyncio
 import discord
 from discord.ext import commands, tasks
 import json
+import random
 
 def read_config(path):
     with open(path, encoding='utf-8') as f:
@@ -17,6 +18,8 @@ if target_channel_id is not None:
     target_channel_id = int(target_channel_id)
 
 cooldown = settings.get('cooldown')
+cooldown_min = settings.get('cooldown_min')
+cooldown_max = settings.get('cooldown_max')
 refresh_interval = 5
 cached_commands = None
 last_refresh_time = 0
@@ -47,7 +50,11 @@ async def bump_loop():
         try:
             await bump_command(channel)
             print('Bump was successful.')
-            bump_loop.change_interval(seconds=cooldown)
+            next_interval = cooldown
+            if cooldown_min is not None and cooldown_max is not None:
+                next_interval = random.randint(cooldown_min, cooldown_max)
+
+            bump_loop.change_interval(seconds=next_interval)
             return
         except Exception as command_error:
             print(f"Error executing /bump command: {command_error}")
