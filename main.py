@@ -10,6 +10,20 @@ def read_config(path):
     with open(path, encoding='utf-8') as f:
         return json.load(f)
 
+
+# just random calculation with a beta distribution to prefer values near the middle of the range
+# to make the random cooldowns feel more natural and less predictable, while still respecting the min and max bounds
+def random_calculation(min_hours, max_hours):
+    min_secs = int(min_hours * 3600)
+    max_secs = int(max_hours * 3600)
+    if min_secs >= max_secs:
+        return min_secs
+
+    roll = random.betavariate(2, 2)
+    span = max_secs - min_secs
+    cooldown_secs = min_secs + int(roll * (span + 1))
+    return min(cooldown_secs, max_secs)
+
 # Load startup settings from JSON
 settings = read_config('config/config.json')
 token = settings.get('token')
@@ -52,7 +66,7 @@ async def bump_loop():
             print('Bump was successful.')
             next_interval = cooldown
             if cooldown_min is not None and cooldown_max is not None:
-                next_interval = random.randint(cooldown_min, cooldown_max)
+                next_interval = random_calculation(cooldown_min, cooldown_max)
 
             bump_loop.change_interval(seconds=next_interval)
             return
