@@ -21,11 +21,12 @@
 Disboard Autobump is built for developers who want a simple and reliable way to automate recurring bump actions in a specific Discord channel.
 
 It works by reading runtime settings from your local config, connecting through a vendored discord.py-self client, fetching the bump application command, and running it on a cooldown-driven loop.
+The next bump interval is generated from the configured range, with values near the middle of the range chosen more often than extremes.
 
 ## Features
 
 - Automated bump trigger with cooldown scheduling
-- Config-based setup for token, channel, prefix, and interval
+- Config-based setup for token, channel, prefix, and weighted cooldown range
 - Lightweight single entrypoint runtime
 - Command cache refresh for resilient slash-command lookup
 - Basic rate-limit handling for safer retries
@@ -57,10 +58,11 @@ install.bat
 
 ~~~json
 {
-	"token": "PUT YOUR TOKEN HERE",
-	"prefix": "!",
-	"channel_id": "YOUR_CHANNEL_ID",
-	"cooldown_minutes": 150
+  "token": "PUT YOUR TOKEN HERE",
+  "command_prefix": "!",
+  "channel_id": "YOUR_CHANNEL_ID",
+  "cooldown_min": 2,
+  "cooldown_max": 5
 }
 ~~~
 
