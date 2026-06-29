@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = ["/.*", "/docs", "/tests"]
+
+[project]
+name = "disboard-autobump"
+version = "2.2.50"
+description = "An automated Discord DISBOARD bump utility."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+
+authors = [{ name = "Zec", email = "zectorplayer@gmail.com" }]
+maintainers = [{ name = "Zec", email = "zectorplayer@gmail.com" }]
+
+keywords = [
+    "discord",
+    "disboard",
+    "autobump",
+    "bot",
+    "automation",
+    "discordbot",
+    "python",
+]
+
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+dependencies = ["curl-cffi>=0.11.1"]
+
+[project.urls]
+Homepage = "https://github.com/Zectxr/disboard-autobump"
+Documentation = "https://github.com/Zectxr/disboard-autobump"
+Repository = "https://github.com/Zectxr/disboard-autobump.git"
+Issues = "https://github.com/Zectxr/disboard-autobump/issues"
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+# Ignore line-length checks (E501)
+ignore = ["E501"]
+
+[tool.uv.workspace]
+members = [
+    "tests",
+]
